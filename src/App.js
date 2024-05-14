@@ -1,15 +1,28 @@
+import {React,useEffect,useContext} from 'react';
 import './App.css';
 import Home from './Pages/Home';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import SignupPage from './Pages/Signup';
+import LoginPage from './Pages/Login';
+import { AuthContext, FirebaseContext } from './store/Context';
+import Create from './Pages/Create';
 
 function App() {
+  const {setUser} = useContext(AuthContext)
+  const {Firebase} = useContext(FirebaseContext)
+  useEffect(()=>{
+    Firebase.auth().onAuthStateChanged((user)=>{
+      setUser(user)
+    })
+  })
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={<Home />}></Route>
+        <Route path='/' element={<Home />}></Route>
         <Route path='/signup' element={<SignupPage />}></Route>
+        <Route path='/login' element={<LoginPage />}></Route>
+        <Route path='/create' element={<Create />}></Route>
       </Routes>
       </BrowserRouter>
 
