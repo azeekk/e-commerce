@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './View.css';
+import './view.css';
 function View() {
   return (
     <div className="viewParentDiv">
