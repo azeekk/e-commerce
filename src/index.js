@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <FirebaseContext.Provider value={{Firebase}}>
       <Context>
-      <App />  
+         <App />  
       </Context>
     </FirebaseContext.Provider>
   </React.StrictMode>
