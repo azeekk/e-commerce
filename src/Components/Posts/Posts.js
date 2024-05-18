@@ -25,10 +25,7 @@ useEffect(()=>{
   })
 },)
 
-function handlePost() {
-  setPostDetails(products)
-  navigate('/viewpost')
-}
+
 
 
   return (
@@ -43,7 +40,12 @@ function handlePost() {
 
             return <div
             className="card"
-            onClick={handlePost}
+            onClick={()=>{
+              setPostDetails(product)
+              navigate('/viewpost')
+              console.log(product)
+
+            }}
           >
             <div className="favorite">
               <Heart></Heart>
