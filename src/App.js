@@ -22,7 +22,7 @@ function App() {
       <Post>
       <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />}></Route>
+        <Route path='/e-commerce' element={<Home />}></Route>
         <Route path='/signup' element={<SignupPage />}></Route>
         <Route path='/login' element={<LoginPage />}></Route>
         <Route path='/create' element={<Create />}></Route>
